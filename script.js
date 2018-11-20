@@ -89,10 +89,16 @@ document.write(getScreenSize() + "<br/>" +  getAvaliableScreenSize());
 
 
 function getScreenSize() {
-	let screenSize = (screen.width + "*" + screen.height);
+	let ratio = window.devicePixelRatio || 1;
+	let width = screen.width*ratio;	
+	let height = screen.height*ratio;	
+	let screenSize = (width + "*" + height);
 	return screenSize;
 }
 function getAvaliableScreenSize() {
-	let screenSize = (screen.availWidth + "*" + screen.availHeight);
+	let ratio = window.devicePixelRatio || 1;
+	let width = screen.availWidth*ratio;	
+	let height = screen.availHeight*ratio;	
+	let screenSize = (width + "*" + height);
 	return screenSize;
 }
